@@ -1,17 +1,24 @@
 # Binance Futures Trading Bot
 
-This is a simple command-line trading bot built in Python using the Binance Futures Testnet API.
+## Overview
 
-The bot allows users to place MARKET and LIMIT orders. It also validates user input, logs API activity, and handles errors.
+This project is a command-line trading bot developed in Python using the Binance Futures Testnet API.
+
+The application allows users to place MARKET and LIMIT orders through a simple menu-driven interface. It validates user inputs, communicates with the Binance Futures Testnet, logs order details, and handles exceptions gracefully.
+
+---
 
 ## Features
 
 - Place MARKET orders
 - Place LIMIT orders
 - Supports BUY and SELL orders
+- Menu-driven command-line interface
 - Input validation
-- Logging
+- Logging of orders and errors
 - Exception handling
+
+---
 
 ## Project Structure
 
@@ -28,12 +35,37 @@ TradingBot/
 │   └── trading_bot.log
 │
 ├── .env
+├── .gitignore
 ├── main.py
 ├── README.md
 └── requirements.txt
 ```
 
+---
+
+## Prerequisites
+
+Before running the project, make sure you have:
+
+- Python 3 installed
+- A Binance Futures Testnet account
+- Binance Testnet API Key and Secret
+
+---
+
 ## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Prarthana1707/TradingBot.git
+```
+
+Move to the project directory:
+
+```bash
+cd TradingBot
+```
 
 Install the required packages:
 
@@ -41,14 +73,16 @@ Install the required packages:
 pip install -r requirements.txt
 ```
 
-Create a `.env` file in the project folder and add your Binance Testnet API credentials.
+Create a `.env` file in the project directory and add your Binance Testnet API credentials:
 
-```
+```env
 API_KEY=your_api_key
 API_SECRET=your_api_secret
 ```
 
-## Running the Program
+---
+
+## Running the Application
 
 Run the following command:
 
@@ -56,24 +90,44 @@ Run the following command:
 python main.py
 ```
 
-The program will ask for:
+After starting the application, a menu will be displayed.
 
-- Symbol
-- Side (BUY/SELL)
-- Order Type (MARKET/LIMIT)
+Users can:
+
+- Place a MARKET order
+- Place a LIMIT order
+- Exit the application
+
+For each order, the program requests:
+
+- Trading Symbol
+- Order Side (BUY/SELL)
 - Quantity
-- Price (only for LIMIT orders)
+- Price (for LIMIT orders)
 
-## Log File
+After an order is processed, the user can place another order or exit the application.
 
-All order information and errors are saved in:
+---
+
+## Logging
+
+All successful orders and application errors are stored in:
 
 ```
 logs/trading_bot.log
 ```
 
-## Requirements
+---
 
-- Python 3
-- Binance Futures Testnet account
-- API Key and Secret
+## Dependencies
+
+- python-binance
+- python-dotenv
+
+(See `requirements.txt` for the complete list.)
+
+---
+
+## Notes
+
+This project uses the Binance Futures **Testnet** for testing purposes. No real trades are executed.
